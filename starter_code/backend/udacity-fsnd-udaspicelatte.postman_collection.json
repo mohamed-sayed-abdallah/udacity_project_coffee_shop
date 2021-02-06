@@ -1,0 +1,1471 @@
+{
+	"info": {
+		"_postman_id": "cf0339d3-deec-4f6e-8e71-7d471054ca79",
+		"name": "udacity-fsnd-udaspicelatte",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1342"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 12:30:08 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"lattee\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"milk tea\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Gensen\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Genger\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Hot chocolate\"\n        },\n        {\n            \"id\": 7,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"lemon mint\"\n        },\n        {\n            \"id\": 8,\n            \"recipe\": [\n                {\n                    \"color\": \"red\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"tea with mint\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks-detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks-detail",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks-detail"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 13:57:06 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 401,\n    \"message\": {\n        \"code\": \"authorization_header_missing\",\n        \"description\": \"Authorization header is expected.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:24:32 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 401,\n    \"message\": {\n        \"code\": \"authorization_header_missing\",\n        \"description\": \"Authorization header is expected.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks/1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks",
+										"1"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:25:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 401,\n    \"message\": {\n        \"code\": \"authorization_header_missing\",\n        \"description\": \"Authorization header is expected.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks/1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks",
+										"1"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:25:54 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 401,\n    \"message\": {\n        \"code\": \"authorization_header_missing\",\n        \"description\": \"Authorization header is expected.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "barista",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2NkOTUxODUzYjAwNmEwMTg1MzEiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIxODk2NjUsImV4cCI6MTYxMjE5Njg2NSwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MtZGV0YWlsIl19.DUKbjntO_PNWCjfmRdjVK0Yu6TZ2ce4TrN6Gg-NryObsKs0VPLZ1RVgLz7Vob3AGq1Uh5BAz_E7JpMNcTvkriJT2-7CK6dSMits7f-5kRt-XxqdT48uEmzYA0ZIyu3KReXPb_-M-zQdW9TyyyJvZQMQasyNBxgJLAiQxbj8jh-QGeDzhOUMFYwtEh9WBFujRlwqHN-s8fuGWGq-wDfETIkWp_hosduRKnsMxm4Kf2uzqpXbN2bHNXfBpR4mr4S3CGjrDnccE7UIwAB638O97O2LXIP5sZNeMCNFRUymB1xsT-XH6gTJFv_szOVMVVUG41MZLA0DFdRn1bj-a0_urQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1342"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:29:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"lattee\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"milk tea\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Gensen\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Genger\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Hot chocolate\"\n        },\n        {\n            \"id\": 7,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"lemon mint\"\n        },\n        {\n            \"id\": 8,\n            \"recipe\": [\n                {\n                    \"color\": \"red\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"tea with mint\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2NkOTUxODUzYjAwNmEwMTg1MzEiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIyMTU3MDEsImV4cCI6MTYxMjIyMjkwMSwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MtZGV0YWlsIl19.lBgxLYgY4QbEr-8sBPcU0LKsmPmFQSa7qURBWRuEy04o1E-NBBdJVsnWaT12qytCqPQBPBVt3ZRZKoHTTvPBWQsXOiw7EwY5qEX1ygSzdW6Z-XqCAXzGSIca-hauFN0VPlSe-RVuMfSejNlOIxSrDRoUXW-ksC45ZVgSJNWIY-4JZWwK0-AIiF7MZSJ-YSTNfqyVukFyXfOjCVMQX1FVQBaJASCuPS9CZxuXxjq5195jjPwrEN0ppWTlTN-7dO2YOJfwPAJCGEzASeWA0aFW-gy5Ar4I7dmCt0wFW_yfWqZqRj1cf3BO7voGICSP4hhOpsESk0fMtmfTv04YLO6-UQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks-detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks-detail",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks-detail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1620"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:29:53 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"nescafe\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"lattee\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"tea milk\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"milk tea\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"gensen\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Gensen\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"genger\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"lemon\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Genger\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Hot chocolate\"\n        },\n        {\n            \"id\": 7,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"lemon\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"name\": \"mint\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"lemon mint\"\n        },\n        {\n            \"id\": 8,\n            \"recipe\": [\n                {\n                    \"color\": \"red\",\n                    \"name\": \"tea\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"name\": \"mint\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"tea with mint\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2NkOTUxODUzYjAwNmEwMTg1MzEiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIxODk2NjUsImV4cCI6MTYxMjE5Njg2NSwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MtZGV0YWlsIl19.DUKbjntO_PNWCjfmRdjVK0Yu6TZ2ce4TrN6Gg-NryObsKs0VPLZ1RVgLz7Vob3AGq1Uh5BAz_E7JpMNcTvkriJT2-7CK6dSMits7f-5kRt-XxqdT48uEmzYA0ZIyu3KReXPb_-M-zQdW9TyyyJvZQMQasyNBxgJLAiQxbj8jh-QGeDzhOUMFYwtEh9WBFujRlwqHN-s8fuGWGq-wDfETIkWp_hosduRKnsMxm4Kf2uzqpXbN2bHNXfBpR4mr4S3CGjrDnccE7UIwAB638O97O2LXIP5sZNeMCNFRUymB1xsT-XH6gTJFv_szOVMVVUG41MZLA0DFdRn1bj-a0_urQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "FORBIDDEN",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:38:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 403,\n    \"message\": {\n        \"code\": \"authorization needed\",\n        \"description\": \"Authorization is needed.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2NkOTUxODUzYjAwNmEwMTg1MzEiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIxODk2NjUsImV4cCI6MTYxMjE5Njg2NSwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MtZGV0YWlsIl19.DUKbjntO_PNWCjfmRdjVK0Yu6TZ2ce4TrN6Gg-NryObsKs0VPLZ1RVgLz7Vob3AGq1Uh5BAz_E7JpMNcTvkriJT2-7CK6dSMits7f-5kRt-XxqdT48uEmzYA0ZIyu3KReXPb_-M-zQdW9TyyyJvZQMQasyNBxgJLAiQxbj8jh-QGeDzhOUMFYwtEh9WBFujRlwqHN-s8fuGWGq-wDfETIkWp_hosduRKnsMxm4Kf2uzqpXbN2bHNXfBpR4mr4S3CGjrDnccE7UIwAB638O97O2LXIP5sZNeMCNFRUymB1xsT-XH6gTJFv_szOVMVVUG41MZLA0DFdRn1bj-a0_urQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks/1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks",
+										"1"
+									]
+								}
+							},
+							"status": "FORBIDDEN",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:36:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 403,\n    \"message\": {\n        \"code\": \"authorization needed\",\n        \"description\": \"Authorization is needed.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2NkOTUxODUzYjAwNmEwMTg1MzEiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIxODk2NjUsImV4cCI6MTYxMjE5Njg2NSwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDpkcmlua3MtZGV0YWlsIl19.DUKbjntO_PNWCjfmRdjVK0Yu6TZ2ce4TrN6Gg-NryObsKs0VPLZ1RVgLz7Vob3AGq1Uh5BAz_E7JpMNcTvkriJT2-7CK6dSMits7f-5kRt-XxqdT48uEmzYA0ZIyu3KReXPb_-M-zQdW9TyyyJvZQMQasyNBxgJLAiQxbj8jh-QGeDzhOUMFYwtEh9WBFujRlwqHN-s8fuGWGq-wDfETIkWp_hosduRKnsMxm4Kf2uzqpXbN2bHNXfBpR4mr4S3CGjrDnccE7UIwAB638O97O2LXIP5sZNeMCNFRUymB1xsT-XH6gTJFv_szOVMVVUG41MZLA0DFdRn1bj-a0_urQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks/1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks",
+										"1"
+									]
+								}
+							},
+							"status": "FORBIDDEN",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:37:45 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 403,\n    \"message\": {\n        \"code\": \"authorization needed\",\n        \"description\": \"Authorization is needed.\"\n    },\n    \"success\": false\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik4wTkNOVEEzTWpaQ1FUa3lRMEl6TmtORk0wWXhRVFUwT1RFMFFVVkNSRUpDT1RBME1EUXpOUSJ9.eyJpc3MiOiJodHRwczovL3VkYWNpdHktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDY3MTQ4MTQ0MTcwNjk3MTI4OTMiLCJhdWQiOlsiZGV2IiwiaHR0cHM6Ly91ZGFjaXR5LWZzbmQuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU2MDg5MDE2MCwiZXhwIjoxNTYwODk3MzYwLCJhenAiOiJPSjVwQk9ZSURFa09FVFVmUWo1ajdsSDZFTFcwMkd1MCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.j9ocW47_exQOkEa10ffh8eijGvrIMxnGRzCmbrXnfaN_8ULsgA7AnWYMtvP8RmPWvT9n8sReWnFuJajUHBUbnBO2GuJ4aM3-WDUBeJT0X_mpGUWs4lxaNTbIkWdiWPTsEiRnP3wT-dU_v3Olw2PB4UMajMIjSH-IdF2Y1CiJIOaM0gV44RGZRyRvj6C2_mOkMfoXxzw-HrVvTRCo1NcUPea5Bs04POni7azx-B7FstP_HLm0dEbbge4XbmovHwlIXknIoI8PbuGXeLBqE2hv8fErKFBuIykxzK0nErH5zSPCrkM-_9smb8TLGAH-E5j1KQb6SHDKtcV_QHnsUYFuXA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "manager",
+			"item": [
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2RmZGZmY2JlMjAwNmE4OTBmNzQiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIxOTA0NTAsImV4cCI6MTYxMjE5NzY1MCwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsInBhdGNoOmRyaW5rcyIsInBvc3Q6ZHJpbmtzIl19.OpPyAJlDvEuy9wR_dZUsxKNeflCk-dp3PnVH21LFlZodaELeYTLV2XyRmKAwnUjSGQbYaZPE6Er6J_8DP_2oPbs7MSumBf39Xg4UkJGfKKNVzfYk_HJLev4pe79fU2zG4rMBFVe3uEY1MH0UsUJH-mIklN2nymTKvgeVGDQUQSZGl511Wfa-ZkZJxjhkFgHK-0BniJVhaGLSzgg_DFsp52ArqBITj3Gc2VtVU5b1xEpox_11YLleCNeRmxEXE9t14Lw_ltnOq3X0dEOxFRxR8dwrsshcoUPpgqn08RIHiFRT5elc5FJMaBPvvNjWKbVyJJn2YO5zxZUKjiYgXkWkgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1342"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:42:04 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"lattee\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"milk tea\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Gensen\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Genger\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Hot chocolate\"\n        },\n        {\n            \"id\": 7,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"lemon mint\"\n        },\n        {\n            \"id\": 8,\n            \"recipe\": [\n                {\n                    \"color\": \"red\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"tea with mint\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks-detail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2RmZGZmY2JlMjAwNmE4OTBmNzQiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIyMTYyODAsImV4cCI6MTYxMjIyMzQ4MCwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsInBhdGNoOmRyaW5rcyIsInBvc3Q6ZHJpbmtzIl19.XFuXHwMXbWCbmmtQS7QMtYgebYmeUAru_4MT0uWrnMRazN0owT9RIET0krg3DQM_Z6uQWnBI4W1vq9Npk3R-utifKF1E6pjeMw4RgZ8DyL9IJAsalkTQNqBBguKeHXoTCBXn1YkQo_gb_0j9Ai59aXnp9sAnkJDw94NOwIe4RK4N8OsjivgNy-8dUwc7XMlO5av1yN6FyozZ5meAv_KEM5hJu60uTCMBBoSaCqPN-gsj4FzV-jbrpJSIe0zGGRytkDxLN3VoIu_yxnAonECSiESDmP1evG3qaCpQjhEA73UIQefkCJ_dEWRXq39aYP2ap1IdHAzFYZFbVBV-mwx1JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks-detail",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks-detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks-detail",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks-detail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1620"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:42:47 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"nescafe\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"lattee\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"tea milk\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"milk tea\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"gensen\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Gensen\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"genger\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"lemon\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Genger\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Hot chocolate\"\n        },\n        {\n            \"id\": 7,\n            \"recipe\": [\n                {\n                    \"color\": \"yellow\",\n                    \"name\": \"lemon\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"name\": \"mint\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"lemon mint\"\n        },\n        {\n            \"id\": 8,\n            \"recipe\": [\n                {\n                    \"color\": \"red\",\n                    \"name\": \"tea\",\n                    \"parts\": 1\n                },\n                {\n                    \"color\": \"green\",\n                    \"name\": \"mint\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"tea with mint\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2RmZGZmY2JlMjAwNmE4OTBmNzQiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIyMTYyODAsImV4cCI6MTYxMjIyMzQ4MCwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsInBhdGNoOmRyaW5rcyIsInBvc3Q6ZHJpbmtzIl19.XFuXHwMXbWCbmmtQS7QMtYgebYmeUAru_4MT0uWrnMRazN0owT9RIET0krg3DQM_Z6uQWnBI4W1vq9Npk3R-utifKF1E6pjeMw4RgZ8DyL9IJAsalkTQNqBBguKeHXoTCBXn1YkQo_gb_0j9Ai59aXnp9sAnkJDw94NOwIe4RK4N8OsjivgNy-8dUwc7XMlO5av1yN6FyozZ5meAv_KEM5hJu60uTCMBBoSaCqPN-gsj4FzV-jbrpJSIe0zGGRytkDxLN3VoIu_yxnAonECSiESDmP1evG3qaCpQjhEA73UIQefkCJ_dEWRXq39aYP2ap1IdHAzFYZFbVBV-mwx1JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"strawberry\",\n    \"recipe\": [{\n        \"name\": \"strwabeery\",\n        \"color\": \"red\",\n        \"parts\": 1\n    }]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/drinks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Water3\",\n    \"recipe\": [{\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:43:52 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 9,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"Water\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Water3\"\n        }\n    ],\n    \"success\": true\n}"
+						},
+						{
+							"name": "/drinks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Water2\",\n    \"recipe\": [{\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }]\n}"
+								},
+								"url": {
+									"raw": "{{host}}/drinks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:58:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 7,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"Water\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"Water2\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains drinks array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2RmZGZmY2JlMjAwNmE4OTBmNzQiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIyMTYyODAsImV4cCI6MTYxMjIyMzQ4MCwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsInBhdGNoOmRyaW5rcyIsInBvc3Q6ZHJpbmtzIl19.XFuXHwMXbWCbmmtQS7QMtYgebYmeUAru_4MT0uWrnMRazN0owT9RIET0krg3DQM_Z6uQWnBI4W1vq9Npk3R-utifKF1E6pjeMw4RgZ8DyL9IJAsalkTQNqBBguKeHXoTCBXn1YkQo_gb_0j9Ai59aXnp9sAnkJDw94NOwIe4RK4N8OsjivgNy-8dUwc7XMlO5av1yN6FyozZ5meAv_KEM5hJu60uTCMBBoSaCqPN-gsj4FzV-jbrpJSIe0zGGRytkDxLN3VoIu_yxnAonECSiESDmP1evG3qaCpQjhEA73UIQefkCJ_dEWRXq39aYP2ap1IdHAzFYZFbVBV-mwx1JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"mocca\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks/1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Water5\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}/drinks/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:45:22 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"brown\",\n                    \"name\": \"nescafe\",\n                    \"parts\": 2\n                }\n            ],\n            \"title\": \"Water5\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/drinks/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkRMT3hhaTA4eEpmOUhuc2dFTmF1UyJ9.eyJpc3MiOiJodHRwczovL2Rldi11ZGFjaXR5Y29mZmVlYXBwLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDE0N2RmZGZmY2JlMjAwNmE4OTBmNzQiLCJhdWQiOiJkcmlua3MiLCJpYXQiOjE2MTIyMTYyODAsImV4cCI6MTYxMjIyMzQ4MCwiYXpwIjoiNHF3bzdXRERhUnpiaE5QYTBCamc3SnVuUzA2VTlJb0siLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpkcmlua3MiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsInBhdGNoOmRyaW5rcyIsInBvc3Q6ZHJpbmtzIl19.XFuXHwMXbWCbmmtQS7QMtYgebYmeUAru_4MT0uWrnMRazN0owT9RIET0krg3DQM_Z6uQWnBI4W1vq9Npk3R-utifKF1E6pjeMw4RgZ8DyL9IJAsalkTQNqBBguKeHXoTCBXn1YkQo_gb_0j9Ai59aXnp9sAnkJDw94NOwIe4RK4N8OsjivgNy-8dUwc7XMlO5av1yN6FyozZ5meAv_KEM5hJu60uTCMBBoSaCqPN-gsj4FzV-jbrpJSIe0zGGRytkDxLN3VoIu_yxnAonECSiESDmP1evG3qaCpQjhEA73UIQefkCJ_dEWRXq39aYP2ap1IdHAzFYZFbVBV-mwx1JQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/drinks/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/drinks/1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/drinks/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"drinks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/0.15.2 Python/3.7.9"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Feb 2021 14:48:04 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"delete\": \"1\",\n    \"success\": true\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik4wTkNOVEEzTWpaQ1FUa3lRMEl6TmtORk0wWXhRVFUwT1RFMFFVVkNSRUpDT1RBME1EUXpOUSJ9.eyJpc3MiOiJodHRwczovL3VkYWNpdHktZnNuZC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDY3MTQ4MTQ0MTcwNjk3MTI4OTMiLCJhdWQiOlsiZGV2IiwiaHR0cHM6Ly91ZGFjaXR5LWZzbmQuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU2MDg4OTU5NiwiZXhwIjoxNTYwODk2Nzk2LCJhenAiOiJPSjVwQk9ZSURFa09FVFVmUWo1ajdsSDZFTFcwMkd1MCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzIiwicG9zdDpkcmlua3MiXX0.Qk-5FC2X_RUkK00WKARYCKw_877XFuaT5ND3f3ObD9Ly1e1GMfJXhi3McV12binGGCw6x241erIjGB0t8WbWdU3bYpIVD1klZ64DVLQ8Q2LQ2NzB3eFEOgGLL85az1jIDbRiuATIRbbBOWILPJ6h6KR9L5hExklf2zuj3Bnwm7zMRmVpIJmjrUt4bWjtTOguOwJ0IVQsk4PDjGxzwfrUWFCFNDqN_u15JNLxeH21C-QvCpHs3D4Aodeh1qFUuWHfK_Gyfu91AitXPTVZRX9eZbUOVkGT3JMn4sKn9oGaKFTx2E-Y4DmoECG0uWImbX_wiRjx4aTeo7Q7hKSReMToPA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
